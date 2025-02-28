@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FETU Leadership 2024-2025</title>
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="aboutresponsive.css">
+    <link rel="shortcut icon" href="img/img/sslogo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -46,111 +57,78 @@
             margin-bottom: 30px;
         }
 
-        nav {
-            width: 100%;
-            height: 70px;
-            padding: 0px 10px;
-            background: white;
-            box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
+        .dropdown {
+            position: relative;
+            display: inline-block;
         }
-
-        .logo img {
-            height: 45px;
-        }
-
-        .nav_side {
-            display: flex;
-        }
-
-        .nav_side a {
+        .dropbtn {
             text-decoration: none;
-            color: black;
-            font-size: 15px;
-            font-weight: 500;
-            font-family: calibri;
-            margin: 0px 10px;
-            padding: 5px 10px;
-            transition: all linear 0.3s;
+            display: block;
         }
-
-        .nav_side a:hover {
-            background: #00999c;
-            color: white;
-            border-radius: 4px;
-        }
-
-        .mobile-menu-btn {
+        .dropdown-content {
             display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            min-width: 150px;
+            z-index: 1;
         }
-
-        @media screen and (max-width: 1000px) {
-            nav {
-                padding: 0px 50px;
-            }
-            .nav_side a {
-                margin: 0px 5px;
-                font-size: 14px;
-            }
+        .dropdown-content a {
+            color: black;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
         }
-
-        @media screen and (max-width: 700px) {
-            nav {
-                padding: 0px 20px;
-            }
-            .nav_side {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                background: white;
-                width: 100%;
-                padding: 20px;
-                flex-direction: column;
-                box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.05);
-            }
-            .nav_side.active {
-                display: flex;
-            }
-            .nav_side a {
-                margin: 5px 0px;
-                font-size: 14px;
-            }
-            .mobile-menu-btn {
-                display: block;
-            }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
     </style>
+    
 </head>
 <body>
-    <nav>
+    <!-- ----------------------------------------NAVBAR----------------------------------------------------->
+    <nav class="nav nav_top">
         <div class="logo">
-            <img src="images/logo.png" alt="logo" />
+            <a href="index.html"><img src="images/logo.png" width="250"></a>
         </div>
+        <!-- Hamburger Button -->
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+
         <div class="nav_side" id="mobileMenu">
-            <a href="https://fetu-ug.vercel.app/about.html">About us</a>
-            <a href="https://fetu-ug.vercel.app/donate.html">Donate</a>
-            <a href="https://fetu-ug.org:2096/">Webmail</a>
-            <a href="https://fetu-ug.vercel.app/report.html">Submit Complaint</a>
+            <a href="about.html">About us</a>
+            <a href="donate.html">Donate</a>
+
+            <!-- Dropdown for Fetushop -->
+            <div class="dropdown">
+                <a href="#" class="dropbtn">FetuShop ▼</a>
+                <div class="dropdown-content">
+                    <a href="https://fetu-ug.org/fetushop/">For Customers</a>
+                    <a href="https://fetu-ug.org/fetushop/admin741kihxpjssagkgsy25/index.php?controller=AdminLogin&logout=1&token=4eca91082f1b001f0819ab0b5e545a1b">For Sellers</a>
+                </div>
+            </div>
+
+            <a href="report.html">Submit Complaint</a>
             <a href="https://fetuprofessionaltrainings.rsvpify.com/">Trainings</a>
-            <a href="https://fetu-ug.vercel.app/Team.html">Our Team</a>
-            <a href="https://fetu-ug.vercel.app/contact.html">Contact us</a>
-            <a href="https://fetu-ug.vercel.app/members.html">Members List</a>
+            
+            <!-- Dropdown for Our Team -->
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Our Team ▼</a>
+                <div class="dropdown-content">
+                    <a href="Team.html">Executive Team</a>
+                    <a href="leader.html">Uganda Team</a>
+                </div>
+            </div>
+
+            <a href="contact.html">Contact us</a>
+            <a href="members.html">Members List</a>
             <a href="https://form.jotform.com/242787201364558">Register</a>
             <a href="https://fetu-ug.org/admidio/adm_program/system/login.php">Sign in</a>
         </div>
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
     </nav>
+
     <div class="container">
         <h1>FETU Leadership 2024 - 2025</h1>
 
@@ -453,17 +431,100 @@
         </div>
     </div>
 
-    <footer style="text-align: center; margin-top: 50px; padding: 20px; background-color: #f4f4f4;">
+    <!-- <footer style="text-align: center; margin-top: 50px; padding: 20px; background-color: #f4f4f4;">
         <p>FEDERATION OF ENGINEERS, TECHNICIANS AND TECHNOLOGISTS OF UGANDA</p>
         <p>Email: info@fetu.org</p>
         <p>Tel: +256 770 876608</p>
         <p>Address: H108, City Centre Complex, Luwum Street, Nakasero, Kampala, Uganda</p>
-    </footer>
+    </footer> -->
+
+<!-- footer -->
+
+<footer class="new_footer_area bg_color">
+    <div class="new_footer_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                        <h3 class="f-title f_600 t_color f_size_18">Who we are</h3>
+                        <p style="text-align: left; margin: 0;">
+                            The Federation of Engineers, Technicians and Technologists of Uganda (FETU) is an organization dedicated to championing the interests of Engineers, Technologists, Technicians & Artisans in Uganda.
+                          </p>  
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                        <h3 class="f-title f_600 t_color f_size_18">Contact Us</h3>
+                        <ul class="list-unstyled f_list">
+                            <li><a href="contact" target="_blank">H108, City Centre Complex, Luwum Street, Nakasero,</a></li>
+                            <li><a href="contact" target="_blank">Mailing Address: P.O. Box 176646, Kampala, Uganda</a></li>
+                            <li><a href="tel: +256770876608">+256-770-876608</a></li>
+                            <li><a href="tel: +256770876608">+256-759-236176</a></li>
+                            <li><a href="tel: +256770876608">+256-758-751767</a></li>
+                            <li><a href="mailto: info@fetu-ug.org">info@fetu-ug.org</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                        <h3 class="f-title f_600 t_color f_size_18">Help</h3>
+                        <ul class="list-unstyled f_list">
+                            <li><a href="about.html">About us</a></li>
+                            <li><a href="donate.html">Donate to FETU</a></li>
+                            <li><a href="report.html">Report a case</a></li>
+                            <li><a href="https://fetuprofessionaltrainings.rsvpify.com/">Professional Trainings</a></li>
+                            <li><a href="Team.html">Our Team</a></li>
+                            <li><a href="contact.html">Contact us</a></li> 
+                            <li><a href="https://form.jotform.com/242787201364558">Register</a></a></li>
+                            <li><a href="https://fetu-ug.org/admidio/adm_program/system/login.php">Sign in</a></li>                              
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+                        <h3 class="f-title f_600 t_color f_size_18">Team Solutions</h3>
+                        <div class="f_social_icon">
+                            <a href="https://www.facebook.com/profile.php?id=61558366355207&mibextid=ZbWKwL" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/company/fetu/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            <a href="https://twitter.com/Fetu_ug"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="https://twitter.com/Fetu_ug"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bg">
+            <div class="footer_bg_one"></div>
+            <div class="footer_bg_two"></div>
+        </div>
+    </div>
+    <div class="footer_bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-sm-7">
+                    <p class="mb-0 f_400">Copyright &copy; 2024 FETU. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- footer -->
+
 
     <script>
         function toggleMobileMenu() {
             document.getElementById('mobileMenu').classList.toggle('active');
         }
     </script>
+
+<script>
+    function toggleMobileMenu() {
+        var menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("show");
+    }
+    </script>
+<chat-bot platform_id="88a27cc6-9437-4065-b809-95984eb69639" user_id="1c1c72f7-0da6-4905-bccf-d6e71f4d87b7" chatbot_id="b2debc58-ba44-4862-a026-92b14a90923d"><a href="https://www.chatsimple.ai/?utm_source=widget&utm_medium=referral">chatsimple</a></chat-bot><script src="https://cdn.chatsimple.ai/chat-bot-loader.js" defer></script>
+
 </body>
 </html>
